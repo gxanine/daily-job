@@ -9,6 +9,9 @@
   "author": "Grzegorz Ilnicki",
   "license": "ISC",
   "dependencies": {
-    "textract": "^2.2.0"
+    "fs-extra": "^5.0.0",
+    "textract": "^2.2.0",
+    "unzip": "^0.1.11",
+    "wget": "0.0.1"
   }
 }

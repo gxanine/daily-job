@@ -1,3 +1,4 @@
 {
-	"Url" : "https://www.lincs2.co.uk/pdf/dailyjobs.docx"
+	"Url": "https://www.lincs2.co.uk/pdf/dailyjobs.docx",
+	"OutFolder": "unpacked"
 }
