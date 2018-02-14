@@ -60,3 +60,5 @@ typings/
 # Testing docs
 *.docx
 
+
+\.DS_Store
