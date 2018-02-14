@@ -60,5 +60,8 @@ typings/
 # Testing docs
 *.docx
 
+# Localfiles
+unpacked
 
+# OS
 \.DS_Store
