@@ -57,11 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
-# Testing docs
-*.docx
-
 # Localfiles
-unpacked
+job_listings\.json
+*.docx
 
 # OS
 \.DS_Store
