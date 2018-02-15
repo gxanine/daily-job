@@ -21,7 +21,7 @@ fileIO.downloadFile(config.Url, './dailyjob.docx')
 			// console.log(`${messages}`);
 			// writeToFile(html);
 			let jsonStr = JSON.stringify(scrape.objectifyHtml(html), null, 3);
-			writeToFile(jsonStr, "objects.json");
+			writeToFile(jsonStr, "job_listings.json");
 		})
 		.done();
 	}, (err) => {
