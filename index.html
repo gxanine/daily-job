@@ -12,6 +12,7 @@
 		ipc.on('objs-ready', function (event, obj) {
 			console.log('received');
 			writeListings(obj);
+			openLinksExternally();
 		});
 
 		function writeListings(listings) {
@@ -40,6 +41,22 @@
 		function insertAfter(newNode, referenceNode) {
 		    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 		}
+
+		function openLinksExternally() {
+			const shell = require('electron').shell;
+			const links = document.querySelectorAll('a[href]');
+			links.forEach((link) => {
+				const url = link.getAttribute('href');
+				if (url.indexOf('http') === 0) {
+					console.log('iteration');
+					link.addEventListener('click', (e) => {
+						e.preventDefault();
+						shell.openExternal(url);
+					});
+				}
+			});
+		}
+		
 	</script>
 </body>
 </html>
