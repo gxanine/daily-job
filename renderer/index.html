@@ -6,6 +6,11 @@
 </head>
 <body>
 	<p id="file-msg"></p>
+
+	<script>
+			window.$ = window.jQuery = require(__dirname + '/js/jquery.js');
+	</script>
+
 	<script>
 		const ipc = require('electron').ipcRenderer;
 
