@@ -28,6 +28,8 @@
 				categoryTitle.innerHTML = listings[categoryIndex].name;
 				document.body.appendChild(categoryTitle);
 
+				$(categoryTitle).addClass('category-title');
+				
 				for(let itemIndex = 0; itemIndex < listings[categoryIndex].items.length; itemIndex++) {
 					let itemTitle = document.createElement('p');
 					itemTitle.innerHTML = listings[categoryIndex].items[itemIndex].title + " ";
@@ -39,6 +41,8 @@
 					link.appendChild(linkText);
 					link.href = currentItem.link.href;
 					itemTitle.appendChild(link);
+					$(itemTitle).addClass('item-title');
+					$(link).addClass('item-link');
 				}
 			}
 		}
