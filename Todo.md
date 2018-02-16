@@ -9,7 +9,11 @@
 - ~~Scrap data from HTML~~ 
 - ~~Objectify scraped data~~
 - ~~Save data in JSON file~~
-- Set up `Electron`
+- ~~Set up `Electron`~~
+- Open links in a default browser
+- Make sure app size is relative to the screen size
+- Button for reloading listings
+- Add date of listings file
 
 -- 
 
@@ -17,8 +21,9 @@
 
 ######general
 - ~~Set up~~
-- Get `Electron` working
-- Display JSON as HTML
+- ~~Get `Electron` working~~
+- ~~Display JSON as HTML~~ (not using JSON but DONE)
+- Fix links
 - Beautify
 
 --
