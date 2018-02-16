@@ -17,7 +17,10 @@ const fileIO = require('./lib/fileIO.js');
 let win;
 function createWindow() {
 	// Create a browser window
-	win = new BrowserWindow({width: 800, heigh: 600});
+	win = new BrowserWindow({
+		width: 800,
+		height: 600,
+	});
 
 	// load index.html to app
 	win.loadURL(url.format({
