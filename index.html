@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World!</title>
+</head>
+<body>
+	<p id="file-msg"></p>
+	<script>
+		const ipc = require('electron').ipcRenderer;
+
+		ipc.on('objs-ready', function (event, obj) {
+			console.log('received');
+			writeListings(obj);
+		});
+
+		function writeListings(listings) {
+			// console.log('starting printing');
+			for (let categoryIndex = 0; categoryIndex < listings.length; categoryIndex++) {
+				// console.log('printing ' + categoryIndex);
+				let categoryTitle = document.createElement('h1');
+				categoryTitle.innerHTML = listings[categoryIndex].name;
+				document.body.appendChild(categoryTitle);
+
+				for(let itemIndex = 0; itemIndex < listings[categoryIndex].items.length; itemIndex++) {
+					let itemTitle = document.createElement('p');
+					itemTitle.innerHTML = listings[categoryIndex].items[itemIndex].title + " ";
+					document.body.appendChild(itemTitle);
+					let currentItem = listings[categoryIndex].items[itemIndex];
+
+					let link = document.createElement('a');
+					let linkText = document.createTextNode(currentItem.link.text);
+					link.appendChild(linkText);
+					link.href = currentItem.link.href;
+					itemTitle.appendChild(link);
+				}
+			}
+		}
+
+		function insertAfter(newNode, referenceNode) {
+		    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+		}
+	</script>
+</body>
+</html>
