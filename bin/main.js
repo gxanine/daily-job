@@ -18,8 +18,8 @@ let win;
 function createWindow() {
 	// Create a browser window
 	win = new BrowserWindow({
-		width: 800,
-		height: 600,
+		width: 650,
+		height: 700,
 		title: 'Daily job'
 	});
 
