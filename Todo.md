@@ -14,6 +14,7 @@
 - Make sure app size is relative to the screen size
 - Button for reloading listings
 - Add date of listings file
+- Change `item-tile` colour (and maybe scale) on hover
 
 -- 
 
