@@ -24,6 +24,7 @@
 - ~~Get `Electron` working~~
 - ~~Display JSON as HTML~~ (not using JSON but DONE)
 - ~~Fix links~~
+- Build the app
 - Beautify
 
 --
