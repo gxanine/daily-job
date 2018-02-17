@@ -24,14 +24,14 @@
 			// console.log('starting printing');
 			for (let categoryIndex = 0; categoryIndex < listings.length; categoryIndex++) {
 				// console.log('printing ' + categoryIndex);
-				let categoryTitle = document.createElement('h1');
+				let categoryTitle = document.createElement('div');
 				categoryTitle.innerHTML = listings[categoryIndex].name;
 				document.body.appendChild(categoryTitle);
 
 				$(categoryTitle).addClass('category-title');
 
 				for(let itemIndex = 0; itemIndex < listings[categoryIndex].items.length; itemIndex++) {
-					let itemTitle = document.createElement('p');
+					let itemTitle = document.createElement('div');
 					itemTitle.innerHTML = listings[categoryIndex].items[itemIndex].title + " ";
 					document.body.appendChild(itemTitle);
 					let currentItem = listings[categoryIndex].items[itemIndex];
