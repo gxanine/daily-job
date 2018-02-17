@@ -18,6 +18,9 @@ body {
 .category-title ~ .category-title {
 	margin-top: 3em;
 }
+.item-title:last-child {
+	border-bottom: 0px;
+}
 .item-title {
     display: flex;
     padding: 0.3em;
