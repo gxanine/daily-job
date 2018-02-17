@@ -63,3 +63,5 @@ job_listings\.json
 
 # OS
 \.DS_Store
+
+releases/
