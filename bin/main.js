@@ -10,9 +10,9 @@ const fs = require('fs');
 const ipc = electron.ipcMain;
 
 const mammoth = require('mammoth');
-const config = require('./config.json');
-const scrape = require('./lib/scrapeHtml.js');
-const fileIO = require('./lib/fileIO.js');
+const config = require('../config.json');
+const scrape = require('../lib/scrapeHtml.js');
+const fileIO = require('../lib/fileIO.js');
 
 let win;
 function createWindow() {
