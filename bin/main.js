@@ -74,7 +74,7 @@ function sendObjs(rendWin) {
 				var html = result.value;
 				var messages = result.messages;
 				// console.log(`${messages}`);
-				// fileIO.writeToFile(html);
+				// fileIO.writeToFile(html, "test.html");
 				// let jsonStr = JSON.stringify(scrape.objectifyHtml(html), null, 3);
 				// fileIO.writeToFile(jsonStr, listingsFile).then((filename) => {
 
