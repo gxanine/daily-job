@@ -1,7 +1,7 @@
-
 const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+// const app = electron.app;
+// const BrowserWindow = electron.BrowserWindow;
+const {app, Menu, BrowserWindow} = require('electron')
 const path = require('path');
 const url = require('url');
 
@@ -61,7 +61,19 @@ app.on('activate', () => {
 	}
 });
 
-
+const nav = [
+	{
+		label: 'File',
+		submenu: [
+		{
+			label: 'Quit',
+			accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+			click(){app.quit()}
+		}
+		]
+	}]
+const menu = Menu.buildFromTemplate(nav)
+Menu.setApplicationMenu(menu)
 
 function sendObjs(rendWin) {
 	let docxFile = path.join(os.tmpdir(), 'dailyjobs.docx');
@@ -90,9 +102,3 @@ function sendObjs(rendWin) {
 			console.log(`Could not download the file: ${error}`);
 		});
 }
-
-
-
-
-
-
