@@ -103,6 +103,7 @@ function sendObjs(link, rendWin) {
 			})
 			.done();
 		}, (err) => {
+			rendWin.webContents.send('objs-ready-e', err);
 			console.log(`Could not download the file: ${error}`);
 		});
 }

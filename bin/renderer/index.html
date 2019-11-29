@@ -14,6 +14,18 @@
 	<script>
 		const ipc = require('electron').ipcRenderer;
 
+		ipc.on('objs-ready-e', function (event, err) {
+			console.log('not received');
+			console.log(err);
+			let error = document.createElement('h1');
+			let msg = err;
+			if (msg.toLowerCase().trim() == "server respond 404") {
+				msg = "Oops... we couldn't find any jobs at the moment."
+			}
+			error.innerHTML = msg;
+			document.body.appendChild(error);
+		});
+
 		ipc.on('objs-ready', function (event, obj) {
 			console.log('received');
 			writeListings(obj);
