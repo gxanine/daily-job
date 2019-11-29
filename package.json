@@ -14,11 +14,12 @@
     "fs-extra": "^5.0.0",
     "fstream": "^1.0.12",
     "mammoth": "^1.4.9",
+    "request": "^2.88.0",
     "stream-buffers": "^3.0.1",
     "textract": "^2.5.0",
     "wget": "0.0.1"
   },
   "devDependencies": {
-    "electron": "^1.8.8"
+    "electron": "7.1.2"
   }
 }
