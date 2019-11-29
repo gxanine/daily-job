@@ -20,7 +20,10 @@ function createWindow() {
 	win = new BrowserWindow({
 		width: 650,
 		height: 700,
-		title: 'Daily job'
+		title: 'Daily job',
+		webPreferences: {
+      nodeIntegration: true
+    }
 	});
 
 	// load index.html to app
