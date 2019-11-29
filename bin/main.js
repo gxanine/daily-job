@@ -30,7 +30,9 @@ function createWindow() {
 		slashes: true
 	}));
 
-	sendObjs(win);
+	scrape.getTheLatestLink((link) => {
+		sendObjs(link, win);
+	});
 
 	// Open the DevTools
 	// win.webContents.openDevTools();
@@ -75,11 +77,13 @@ const nav = [
 const menu = Menu.buildFromTemplate(nav)
 Menu.setApplicationMenu(menu)
 
-function sendObjs(rendWin) {
+function sendObjs(link, rendWin) {
+	let newLink = link;
+	if (!newLink) { newLink = config.Url;}
 	let docxFile = path.join(os.tmpdir(), 'dailyjobs.docx');
 	let listingsFile = path.join(os.tmpdir(), 'job_listings.json');
 	let listingsObj;
-	fileIO.downloadFile(config.Url, docxFile)
+	fileIO.downloadFile(newLink, docxFile)
 		.then((filePath) => {
 			mammoth.convertToHtml({path: filePath})
 			.then(function(result) {
