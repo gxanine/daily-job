@@ -83,7 +83,7 @@ Menu.setApplicationMenu(menu)
 function sendObjs(link, rendWin) {
 	let newLink = link;
 	if (!newLink) { newLink = config.Url;}
-	let docxFile = path.join(os.tmpdir(), 'dailyjobs.docx');
+	let docxFile = path.join(os.tmpdir(), 'dailyjobs.doc');
 	let listingsFile = path.join(os.tmpdir(), 'job_listings.json');
 	let listingsObj;
 	fileIO.downloadFile(newLink, docxFile)
