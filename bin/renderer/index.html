@@ -6,18 +6,17 @@
 </head>
 <body>
 	<p id="file-msg"></p>
-
 	<script>
-			window.$ = window.jQuery = require(__dirname + '/js/jquery.js');
+		window.$ = window.jQuery = require(__dirname + '/js/jquery.js');
 	</script>
-
+	
 	<script>
 		const ipc = require('electron').ipcRenderer;
-
+		
 		ipc.on('objs-ready-e', function (event, err) {
-			console.log('not received');
+			console.log('Daily-Job(index.html) - Not received');
 			console.log(err);
-			let error = document.createElement('h1');
+			let error = document.createElement('h3');
 			let msg = err;
 			if (msg.toLowerCase().trim() == "server respond 404") {
 				msg = "Oops... we couldn't find any jobs at the moment."
@@ -27,7 +26,7 @@
 		});
 
 		ipc.on('objs-ready', function (event, obj) {
-			console.log('received');
+			console.log('Daily-Job(index.html) - Received');
 			writeListings(obj);
 			openLinksExternally();
 		});
@@ -42,7 +41,7 @@
 
 				$(categoryTitle).addClass('category-title');
 
-				for(let itemIndex = 0; itemIndex < listings[categoryIndex].items.length; itemIndex++) {
+				for (let itemIndex = 0; itemIndex < listings[categoryIndex].items.length; itemIndex++) {
 					let itemTitle = document.createElement('div');
 					itemTitle.innerHTML = listings[categoryIndex].items[itemIndex].title + " ";
 					document.body.appendChild(itemTitle);
@@ -60,7 +59,7 @@
 		}
 
 		function insertAfter(newNode, referenceNode) {
-		    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+			referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 		}
 
 		function openLinksExternally() {
@@ -76,7 +75,6 @@
 				}
 			});
 		}
-		
 	</script>
 </body>
 </html>

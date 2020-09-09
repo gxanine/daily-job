@@ -1,6 +1,4 @@
 const electron = require('electron');
-// const app = electron.app;
-// const BrowserWindow = electron.BrowserWindow;
 const {app, Menu, BrowserWindow} = require('electron')
 const path = require('path');
 const url = require('url');
@@ -13,6 +11,7 @@ const mammoth = require('mammoth');
 const config = require('../config.json');
 const scrape = require('../lib/scrapeHtml.js');
 const fileIO = require('../lib/fileIO.js');
+const { outputFile } = require('fs-extra');
 
 let win;
 function createWindow() {
@@ -22,7 +21,7 @@ function createWindow() {
 		height: 700,
 		title: 'Daily job',
 		webPreferences: {
-      nodeIntegration: true
+      	nodeIntegration: true
     }
 	});
 
@@ -83,26 +82,27 @@ Menu.setApplicationMenu(menu)
 function sendObjs(link, rendWin) {
 	let newLink = link;
 	if (!newLink) { newLink = config.Url;}
-	let docxFile = path.join(os.tmpdir(), 'dailyjobs.doc');
-	let listingsFile = path.join(os.tmpdir(), 'job_listings.json');
+	let docxFile = path.join(os.tmpdir(), 'DailyJobs.doc');
+	//let listingsFile = path.join(os.tmpdir(), 'job_listings.json');
 	let listingsObj;
 	fileIO.downloadFile(newLink, docxFile)
 		.then((filePath) => {
 			mammoth.convertToHtml({path: filePath})
+			//mammoth.convertToHtml({path: filePath}, options)
 			.then(function(result) {
 				var html = result.value;
-				var messages = result.messages;
-				// console.log(`${messages}`);
+				var messages = result.messages; // Any messages, such as warnings during conversion
+				console.log('\nDaily-Job(main.js) - Conversion Warnings!',messages) 
+				//var messages = result.messages;
+				//console.log(`${messages}`);
 				// fileIO.writeToFile(html, "test.html");
 				// let jsonStr = JSON.stringify(scrape.objectifyHtml(html), null, 3);
 				// fileIO.writeToFile(jsonStr, listingsFile).then((filename) => {
-
 				// 	});
-				console.log('sent');
 				listingsObj = scrape.objectifyHtml(html);
-				// console.log(listingsObj);
+				//console.log(listingsObj);
 				rendWin.webContents.send('objs-ready', (listingsObj));
-
+				console.log('\nDaily-Job(main.js) - sent');
 			})
 			.done();
 		}, (err) => {
