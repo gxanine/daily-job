@@ -1,7 +1,24 @@
-#Todo list
+### DailyJobs - Node.js app that pulls data from lincs2.co.uk 
+- gilnicki
+
+**Updated as of 23/09/2020**
 
 
-######detailed
+### **To-do list:**
+
+----
+
+### General: 
+- ~~Set up~~
+- ~~Get `Electron` working~~
+- ~~Display JSON as HTML~~ (not using JSON but DONE)
+- ~~Fix links~~
+- Build the app
+- Beautify 🔥
+
+----
+
+### Detailed:
 - ~~Set up project files~~
 - ~~Set up repository~~
 - ~~Download .Docx~~
@@ -16,21 +33,7 @@
 - Add date of listings file
 - Change `item-tile` colour (and maybe scale) on hover
 
--- 
+----
 
-
-
-######general
-- ~~Set up~~
-- ~~Get `Electron` working~~
-- ~~Display JSON as HTML~~ (not using JSON but DONE)
-- ~~Fix links~~
-- Build the app
-- Beautify
-
---
-
-#######JustReminding
-- Add more comments!
-
-
+### Misc. Just Reminding
+- Add more comments! :D
