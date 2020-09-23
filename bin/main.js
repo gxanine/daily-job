@@ -25,8 +25,10 @@ let win;
 function createWindow() {
 	// Create a browser window
 	win = new BrowserWindow({
-		width: 650,
-		height: 700,
+		minWidth: 560,
+		minHeight: 400,
+		maxwidth: 750,
+		maxheight: 650,
 		title: 'Daily job',
 		webPreferences: {
 			nodeIntegration: true
@@ -76,12 +78,6 @@ app.on('activate', () => {
 const nav = [{
 		label: 'File',
 		submenu: [{
-				role: 'reload'
-			},
-			{
-				type: 'separator'
-			},
-			{
 				label: 'Quit',
 				accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
 				click() {
