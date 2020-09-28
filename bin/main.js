@@ -130,7 +130,7 @@ function sendObjs(link, rendWin) {
 	if (!newLink) {
 		newLink = config.Url;
 	}
-	let docxFile = path.join(os.tmpdir(), 'DailyJobs.doc');
+	let docxFile = path.join(os.tmpdir(), 'DailyJobs.docx');
 	//let listingsFile = path.join(os.tmpdir(), 'job_listings.json');
 	let listingsObj;
 	fileIO.downloadFile(newLink, docxFile)
