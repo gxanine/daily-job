@@ -43,6 +43,7 @@ function createWindow() {
 	}));
 
 	scrape.getTheLatestLink((link) => {
+		console.log(link);
 		sendObjs(link, win);
 	});
 
